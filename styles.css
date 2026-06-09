@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6f4; color: #1a1a1a; }
+header { background: #1f9d55; color: #fff; padding: 12px 16px; }
+header h1 { margin: 0; font-size: 1.2rem; }
+main { padding: 16px; max-width: 640px; margin: 0 auto; }
+#capture-btn { width: 100%; padding: 16px; font-size: 1.1rem; border: 0; border-radius: 12px;
+  background: #1f9d55; color: #fff; }
+#status { margin: 12px 0; min-height: 1.2em; }
+.card { background: #fff; border-radius: 12px; padding: 16px; margin-top: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.card.warn { color: #8a6d00; }
+.safety { color: #fff; padding: 10px 12px; border-radius: 8px; font-weight: 600; }
+.card h2 { font-size: 1.15rem; margin: 12px 0 4px; }
+.card h2 em { color: #666; font-weight: 400; font-size: .9rem; }
+.confidence { color: #888; font-size: .85rem; margin: 0 0 12px; }
+.photos { display: flex; gap: 8px; }
+.photos img { width: 100%; border-radius: 8px; }
+.photos figure { margin: 0; flex: 1; }
+.refs > div { display: flex; gap: 4px; }
+.refs .ref { width: 33%; }
+.panel { border-top: 1px solid #eee; padding: 8px 0; }
+.panel summary { cursor: pointer; font-weight: 600; }
+#save-btn { width: 100%; margin-top: 12px; padding: 12px; border: 0; border-radius: 10px;
+  background: #1f9d55; color: #fff; }
+.jitem { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px;
+  padding: 8px; margin-top: 8px; }
+.jitem img { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; }
+.jitem .del { margin-left: auto; border: 0; background: none; font-size: 1.1rem; }
