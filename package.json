@@ -1,0 +1,19 @@
+{
+  "name": "bugid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
+    "vitest": "^4.1.8",
+    "wrangler": "^4.99.0"
+  }
+}
