@@ -1,5 +1,5 @@
-// Setează la URL-ul Worker-ului după deploy (Task 11). Local: http://localhost:8787
-export const WORKER_URL = "http://localhost:8787";
+// Worker-ul de producție; pentru dev local: http://localhost:8787
+export const WORKER_URL = "https://bugid-proxy.munteancd.workers.dev";
 
 // blob (din cameră) -> { image: base64, mimeType }
 async function blobToBase64(blob) {
