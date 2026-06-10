@@ -35,7 +35,10 @@ export function renderResult(data, userPhoto) {
     ${panel("🌍 Habitat & răspândire", data.habitat_ro)}
     ${panel("📏 Aspect", data.appearance_ro)}
     ${panel("🍽️ Comportament", data.behavior_ro)}
+    ${panel("🔄 Ciclu de viață", data.lifecycle_ro)}
     ${panel("⚠️ Confuzii", data.confusion_ro)}
+    ${panel("🩹 Dacă te înțeapă/mușcă", data.first_aid_ro)}
+    ${panel("💡 Curiozități", data.facts_ro)}
     <button id="save-btn">💾 Salvează în jurnal</button>
   </div>`;
 }

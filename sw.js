@@ -1,4 +1,4 @@
-const CACHE = "bugid-v1";
+const CACHE = "bugid-v2";
 const SHELL = [
   "./index.html", "./app.js", "./api.js", "./render.js", "./journal.js",
   "./styles.css", "./manifest.webmanifest",

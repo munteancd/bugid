@@ -14,8 +14,21 @@ const PROMPT = `Ești un expert entomolog. Analizează imaginea și răspunde DO
   "habitat_ro": string,
   "appearance_ro": string,
   "behavior_ro": string,
-  "confusion_ro": string
+  "lifecycle_ro": string,
+  "confusion_ro": string,
+  "first_aid_ro": string,
+  "facts_ro": string
 }
+Detalii despre câmpuri:
+- habitat_ro: unde trăiește, dacă și unde se găsește în România.
+- appearance_ro: mărime tipică (în cm/mm), culori, semne distinctive.
+- behavior_ro: hrană, activă ziua/noaptea, sezon, rol în ecosistem.
+- lifecycle_ro: ciclul de viață (ouă, larvă/nimfă, adult, durată de viață).
+- confusion_ro: cu ce specii se confundă des și cum le deosebești.
+- first_aid_ro: ce faci concret dacă te înțeapă/mușcă (prim ajutor, când mergi la medic);
+  dacă specia e complet inofensivă, scrie scurt că nu e necesară nicio măsură.
+- facts_ro: 2-3 curiozități interesante despre specie.
+Scrie 2-4 propoziții per câmp (facts_ro poate fi listă scurtă în text), informativ dar concis.
 Dacă imaginea NU conține o insectă/păianjen, pune is_bug=false și restul câmpurilor ca șiruri goale.
 Dacă nu ești sigur, folosește confidence="low". Scrie toate textele în limba română.`;
 
