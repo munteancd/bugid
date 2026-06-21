@@ -1,26 +1,12 @@
-const CACHE = "bugid-v2";
-const SHELL = [
-  "./index.html", "./app.js", "./api.js", "./render.js", "./journal.js",
-  "./styles.css", "./manifest.webmanifest",
-];
-
-self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)));
-  self.skipWaiting();
-});
-
+// SW de dezafectare: golește cache-ul vechi, se dezînregistrează și redirecționează
+// aplicația veche către noua aplicație unificată "Ce-i asta?".
+self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-  );
-});
-
-// Shell: cache-first (jurnalul merge offline). Apelurile la Worker NU se cache-uiesc.
-self.addEventListener("fetch", (e) => {
-  const url = new URL(e.request.url);
-  if (e.request.method !== "GET") return; // POST la Worker trece direct la rețea
-  if (SHELL.some((p) => url.pathname.endsWith(p.replace("./", "")))) {
-    e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
-  }
+  e.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map((k) => caches.delete(k)));
+    await self.registration.unregister();
+    const clients = await self.clients.matchAll({ type: "window" });
+    clients.forEach((c) => c.navigate(c.url));
+  })());
 });
